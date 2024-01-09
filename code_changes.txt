@@ -1,0 +1,326 @@
+Commit Information:
+{
+    "sha": "ee53ca2119411144319277cd5071e252c06fc311",
+    "message": "go slice",
+    "author": "CodexploreRepo",
+    "committer": "CodexploreRepo",
+    "timestamp": "2023-12-29T04:34:56Z",
+    "total of addlines": 301,
+    "total of removed lines": 31
+}
+Code Changes File:
+{
+    "sha": "030b380e1ae1fc9b3528314aec77ba094a1a52cb",
+    "file_name": "README.md",
+    "numbers of addlines": 1,
+    "numbers of removed lines": 1
+}
+{
+    "sha": "ba465cf71849e590ecc4e614f423f7cc97d0d1b0",
+    "file_name": "assets/img/slice-1.png",
+    "numbers of addlines": 0,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "a57581e8cfcf706f8206d1d1069d976b7166816d",
+    "file_name": "assets/img/slice-2.png",
+    "numbers of addlines": 0,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "64ece5e877dff6d486a7c97333909c403f34a7d4",
+    "file_name": "assets/img/slice-3.png",
+    "numbers of addlines": 0,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "ea74a6903cf4bbab8e9dbee864df61df2fdee39a",
+    "file_name": "assets/img/slice.png",
+    "numbers of addlines": 0,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "b549146c95324c75a452015ccdc7c2a10df6e699",
+    "file_name": "daily_knowledge.md",
+    "numbers of addlines": 74,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "9dc3b58a4bb281f1b3fcb28f7a7e22142273e6e3",
+    "file_name": "docs/basics/loop.md",
+    "numbers of addlines": 30,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "f5d769d00588a94cf0d579a3e2205edc14d34988",
+    "file_name": "docs/basics/struct_array_slice_map.md",
+    "numbers of addlines": 191,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "20b45cdf5d53292765baa049cb6f2e31a3881de7",
+    "file_name": "docs/basics/struct_slice_map.md",
+    "numbers of addlines": 0,
+    "numbers of removed lines": 30
+}
+{
+    "sha": "45f862fe98b9e5456086e002bd79b7eb011dcb9b",
+    "file_name": "docs/basics/variables.md",
+    "numbers of addlines": 5,
+    "numbers of removed lines": 0
+}
+
+---------------
+Commit Information:
+{
+    "sha": "e33e008beb8b2894a111bcd2ec211597ee22a1ac",
+    "message": "struct field",
+    "author": "CodexploreRepo",
+    "committer": "CodexploreRepo",
+    "timestamp": "2023-12-26T14:50:06Z",
+    "total of addlines": 225,
+    "total of removed lines": 3
+}
+Code Changes File:
+{
+    "sha": "921ae4501bbc16d9fccbbc43a6fad42e071a463f",
+    "file_name": "README.md",
+    "numbers of addlines": 5,
+    "numbers of removed lines": 1
+}
+{
+    "sha": "592066a4ca12c1ec54d57c4d29694af00144e3fc",
+    "file_name": "docs/basics/flow_control_statement.md",
+    "numbers of addlines": 116,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "f606eee1029065768e7b170feafce3c9185328e8",
+    "file_name": "docs/basics/functions.md",
+    "numbers of addlines": 1,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "303d263de23534a344ab028bc046aa24d1c6f652",
+    "file_name": "docs/basics/loop.md",
+    "numbers of addlines": 32,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "10ab44f0a20d2a5553e92c3f80524ec096734591",
+    "file_name": "docs/basics/pointers.md",
+    "numbers of addlines": 25,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "20b45cdf5d53292765baa049cb6f2e31a3881de7",
+    "file_name": "docs/basics/struct_slice_map.md",
+    "numbers of addlines": 30,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "e935d937ab68c4d17dd0fa5a32560a2a737871f3",
+    "file_name": "src/pointers.go",
+    "numbers of addlines": 16,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "1a0f185ababff6b048f99b62e2f3d07916629c12",
+    "file_name": "src/variables.go",
+    "numbers of addlines": 0,
+    "numbers of removed lines": 2
+}
+
+---------------
+Commit Information:
+{
+    "sha": "624afd1e456de935b1e0f7464ee0337275535d0c",
+    "message": "update the variable, constant",
+    "author": "CodexploreRepo",
+    "committer": "CodexploreRepo",
+    "timestamp": "2023-12-26T09:16:27Z",
+    "total of addlines": 90,
+    "total of removed lines": 2
+}
+Code Changes File:
+{
+    "sha": "00f6deec9ed61a814de405a2c26f0be705f2dd0b",
+    "file_name": "docs/basics/functions.md",
+    "numbers of addlines": 25,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "f8905f308884b7d1f4bfacfcb216cca8ed9db1df",
+    "file_name": "docs/basics/variables.md",
+    "numbers of addlines": 65,
+    "numbers of removed lines": 2
+}
+
+---------------
+Commit Information:
+{
+    "sha": "91ee1eb2281cf80c9c7c1909c41cafaad05b0b06",
+    "message": "go short declaration",
+    "author": "CodexploreRepo",
+    "committer": "CodexploreRepo",
+    "timestamp": "2023-12-26T05:25:45Z",
+    "total of addlines": 134,
+    "total of removed lines": 45
+}
+Code Changes File:
+{
+    "sha": "fc4f98e3210be538043fa520a3b8b3246c9cfd2a",
+    "file_name": "README.md",
+    "numbers of addlines": 5,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "2cacba8a47021dc248c7f00a5af39a6c8b74b1b3",
+    "file_name": "docs/basics/functions.md",
+    "numbers of addlines": 43,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "65e99c5b77b1a86bb2f3db452ed9513ed645e3ad",
+    "file_name": "docs/basics/variables.md",
+    "numbers of addlines": 77,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "2cc7f640ecdfea45319c39d45cd1ab2e8712405c",
+    "file_name": "docs/docker.md",
+    "numbers of addlines": 0,
+    "numbers of removed lines": 42
+}
+{
+    "sha": "ebb575b01044a868c28f3ffaa747e673daf5359c",
+    "file_name": "main.go",
+    "numbers of addlines": 7,
+    "numbers of removed lines": 3
+}
+{
+    "sha": "1a0f185ababff6b048f99b62e2f3d07916629c12",
+    "file_name": "src/variables.go",
+    "numbers of addlines": 2,
+    "numbers of removed lines": 0
+}
+
+---------------
+Commit Information:
+{
+    "sha": "69a26d367b6decfb31ebecfc508bba8d18af0fab",
+    "message": "update db migration",
+    "author": "CodexploreRepo",
+    "committer": "CodexploreRepo",
+    "timestamp": "2023-12-25T04:40:56Z",
+    "total of addlines": 206,
+    "total of removed lines": 0
+}
+Code Changes File:
+{
+    "sha": "d16a01952a996905bec2d0f0fd9deb58f30faa8f",
+    "file_name": ".gitignore",
+    "numbers of addlines": 2,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "ed999f0197a47d1247ca16d28e8cc89173ea131e",
+    "file_name": "README.md",
+    "numbers of addlines": 5,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "6f56ad961603b069d8e737ff8e040c2b5df46eb1",
+    "file_name": "assets/img/db_migration_updown.png",
+    "numbers of addlines": 0,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "804e66d9625af958bccf8d3b898a084b3ff47fce",
+    "file_name": "docs/database_design.md",
+    "numbers of addlines": 100,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "831a5fe65f104af841bdf527a4341038e96b3a15",
+    "file_name": "docs/database_migration.md",
+    "numbers of addlines": 41,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "2cc7f640ecdfea45319c39d45cd1ab2e8712405c",
+    "file_name": "docs/docker.md",
+    "numbers of addlines": 42,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "ec944703b9392a275049990fa8c753c23dafb7af",
+    "file_name": "docs/installation.md",
+    "numbers of addlines": 8,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "b88eb0cef8663819676dac5355107b7974fd9ebd",
+    "file_name": "docs/resources.md",
+    "numbers of addlines": 1,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "c5740bc19f38ee5d447c081606f0369d918953d6",
+    "file_name": "main.go",
+    "numbers of addlines": 7,
+    "numbers of removed lines": 0
+}
+
+---------------
+Commit Information:
+{
+    "sha": "68be2fea20def49f92fee9280c72fea625c635bd",
+    "message": "update go resources",
+    "author": "CodexploreRepo",
+    "committer": "CodexploreRepo",
+    "timestamp": "2023-10-27T13:50:27Z",
+    "total of addlines": 10,
+    "total of removed lines": 1
+}
+Code Changes File:
+{
+    "sha": "e9eb52404fa30b86670c7d45269e4f6c85155ea0",
+    "file_name": "README.md",
+    "numbers of addlines": 5,
+    "numbers of removed lines": 1
+}
+{
+    "sha": "834650f54770d80178a82c136a88db456182cf52",
+    "file_name": "docs/resources.md",
+    "numbers of addlines": 5,
+    "numbers of removed lines": 0
+}
+
+---------------
+Commit Information:
+{
+    "sha": "2a4d209bdbf6ba1ae87c8d397a422a6e326f3eea",
+    "message": "Initial commit",
+    "author": "CodeXplore",
+    "committer": "GitHub",
+    "timestamp": "2023-10-27T13:41:14Z",
+    "total of addlines": 22,
+    "total of removed lines": 0
+}
+Code Changes File:
+{
+    "sha": "3b735ec4a8ca017a057cfbc9abc77fe058c12f25",
+    "file_name": ".gitignore",
+    "numbers of addlines": 21,
+    "numbers of removed lines": 0
+}
+{
+    "sha": "40e162ffb52665c756c64632ac2a21fe229d45b8",
+    "file_name": "README.md",
+    "numbers of addlines": 1,
+    "numbers of removed lines": 0
+}
+
+---------------
+Numbers of developer involved: 2

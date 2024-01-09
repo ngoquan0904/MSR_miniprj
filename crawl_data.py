@@ -26,7 +26,7 @@ def get_all_commits(repo_url, access_token):
 
         if response.status_code == 200:
             commits = response.json()
-            if not commits:  # Không còn commits nữa
+            if not commits:
                 break
             all_commits.extend(commits)
             page += 1
@@ -35,48 +35,38 @@ def get_all_commits(repo_url, access_token):
             return None
     return all_commits
 
+def get_contributor(repo_url, access_token):
+    contributors_url = f"{repo_url}/contributors"
+    contributors = len(get_repo_data(contributors_url, access_token))
+    return contributors
 
-def extract_commit_info(commit):
-    sha = commit['sha']
-    message = commit['commit']['message']
-    author = commit['commit']['author']['name']
+def extract_commit_info(detail_commit):
+
+    sha = detail_commit['sha']
+    message = detail_commit['commit']['message']
+    author = detail_commit['commit']['author']['name']
+    committer = detail_commit['commit']['committer']['name']
+    num_dev_involved.add(author)
     timestamp = commit['commit']['author']['date']
-    
-    files_changed = commit.get('files', [])
+    # timestamp = datetime.strptime(detail_commit['commit']['author']['date'], '%Y-%m-%dT%H:%M:%SZ')
+    # time_intervals.append(timestamp)
+    added_lines = detail_commit['stats']['additions']
+    removed_lines = detail_commit['stats']['deletions']
 
-    return {'sha': sha, 'message': message, 'author': author, 'timestamp': timestamp, 'files_changed': files_changed}
+    return {'sha': sha, 'message': message, 'author': author,'committer': committer, 'timestamp': timestamp, 'total of addlines':added_lines, 'total of removed lines':removed_lines}
 
-def extract_code_changes(files_changed):
-    added_lines = sum(file.get('additions') for file in files_changed)
-    removed_lines = sum(file.get('deletions') for file in files_changed)
-    total_lines_before = sum(file.get('changes') for file in files_changed) + removed_lines
+def extract_code_changes_file(file):
+    sha = file['sha']
+    file_name = file['filename']
+    added_lines = file['additions']
+    removed_lines = file['deletions']
 
-    return {'added_lines': added_lines, 'removed_lines': removed_lines, 'total_lines_before': total_lines_before}
+    return {'sha': sha, 'file_name': file_name, 'numbers of addlines': added_lines, 'numbers of removed lines': removed_lines}
 
-def analyze_developer_experiences(commits):
-    developers = set()
-    unique_files_changed = set()
-    time_intervals = []
 
-    for commit in commits:
-        author_name = commit['commit']['author']['name']
-        developers.add(author_name)
-        
-        files_changed = commit.get('files', [])
-
-        unique_files_changed.update(file.get('filename', '') for file in files_changed)
-
-        timestamp = datetime.strptime(commit['commit']['author']['date'], '%Y-%m-%dT%H:%M:%SZ')
-        time_intervals.append(timestamp)
-
-    num_developers = len(developers)
-    num_unique_files_changed = len(unique_files_changed)
-    avg_time_interval = (max(time_intervals) - min(time_intervals)) / len(time_intervals)
-
-    return {'num_developers': num_developers, 'num_unique_files_changed': num_unique_files_changed, 'avg_time_interval': avg_time_interval}
 
 if __name__ == "__main__":
-    access_token = "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"
+    access_token = "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"
     with open('input.txt', 'r') as f:
         owner, repo= f.readlines()
     repo_url = f"https://api.github.com/repos/{owner.rstrip()}/{repo.rstrip()}"
@@ -84,29 +74,34 @@ if __name__ == "__main__":
     repo_data = get_repo_data(repo_url, access_token)
     commits = get_all_commits(repo_url, access_token)
 
-    with open('infor_repo_&_list_commits.txt', 'w') as f:
-        language = f"Language: {repo_data['language']}\n"
-        author = f"Author: {repo_data['owner']['login']}\n"
-        publishing_time = f"Created at: {repo_data['created_at']}\n"
-        commits_json = json.dumps(get_all_commits(repo_url, access_token), indent=4)
-        f.write(f"{language}{author}{publishing_time}")
-        f.write(f'Numsber of commits: {len(commits)}\n')
-        f.write(commits_json)
+    
+    if commits:
+        # time_intervals = []
+        contributors = set()
+        num_dev_involved = set()
+        with open('code_changes.txt', 'w') as f:
+            for commit in commits:
+                detail_commit = get_repo_data(commit['url'], access_token)
+                commit_infor = json.dumps(extract_commit_info(detail_commit), indent=4)
+                f.write(f"Commit Information:\n{commit_infor}")
+                f.write("\nCode Changes File:\n")
+                for file in detail_commit['files']:
+                    file_changes = json.dumps(extract_code_changes_file(file), indent=4)
+                    f.write(f"{file_changes}\n")
+                f.write("\n---------------\n")
+            f.write(f"Numbers of developer involved: {len(num_dev_involved)}")
+            # avg_time_interval = (max(time_intervals) - min(time_intervals)) / len(time_intervals)
+            # print(avg_time_interval)
 
-    # if commits:
-    #     for commit in commits:
-    #         print(json.dumps(commit,indent=4))
-    #         break
-    #         commit_info = extract_commit_info(commit)
-    #         code_changes = extract_code_changes(commit_info['files_changed'])
-    #         developer_experiences = analyze_developer_experiences(commits)
 
-    #         # Print or save the extracted information as needed
-    #         print("Commit Information:")
-    #         print(commit_info)
-    #         print("\nCode Changes:")
-    #         print(code_changes)
-    #         print("\nDeveloper Experiences:")
-    #         print(developer_experiences)
-    #         print("\n-----------------------\n")
+        with open('infor_repo_and_list_commits.txt', 'w') as f:
+            language = f"Language: {repo_data['language']}\n"
+            author = f"Author: {repo_data['owner']['login']}\n"
+            publishing_time = f"Created at: {repo_data['created_at']}\n"
+            commits_json = json.dumps(get_all_commits(repo_url, access_token), indent=4)
+            f.write(f"{language}{author}{publishing_time}")
+            f.write(f"Numbers of contributors:{get_contributor(repo_url, access_token)}\n")
+            f.write(f'Numsber of commits: {len(commits)}\n')
+            f.write(commits_json)
 
+        

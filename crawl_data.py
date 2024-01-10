@@ -66,7 +66,7 @@ def extract_code_changes_file(file):
 
 
 if __name__ == "__main__":
-    access_token = "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"
+    access_token = "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"
     with open('input.txt', 'r') as f:
         owner, repo= f.readlines()
     repo_url = f"https://api.github.com/repos/{owner.rstrip()}/{repo.rstrip()}"
@@ -95,11 +95,12 @@ if __name__ == "__main__":
 
 
         with open('infor_repo_and_list_commits.txt', 'w') as f:
+            topics = f"Topics: {repo_data['topics']}\n"
             language = f"Language: {repo_data['language']}\n"
             author = f"Author: {repo_data['owner']['login']}\n"
             publishing_time = f"Created at: {repo_data['created_at']}\n"
             commits_json = json.dumps(get_all_commits(repo_url, access_token), indent=4)
-            f.write(f"{language}{author}{publishing_time}")
+            f.write(f"{topics}{language}{author}{publishing_time}")
             f.write(f"Numbers of contributors:{get_contributor(repo_url, access_token)}\n")
             f.write(f'Numsber of commits: {len(commits)}\n')
             f.write(commits_json)
